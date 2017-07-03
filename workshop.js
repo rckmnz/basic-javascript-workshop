@@ -15,7 +15,11 @@ if (inputString === undefined) {
 }
 
 function letterAtPosition(inputString, position) {
-
+    if (inputString === undefined) {
+        return inputString;
+    } else{
+    return inputString[position];
+    }
 }
 
 function addTwoNumbers(num1, num2) {

@@ -39,12 +39,40 @@ function multiplyTwoNumbers(num1, num2) {
 }
 
 function calculator(operation, num1, num2) {
-
+    switch (operation) {
+        case 'add':
+            return num1 + num2;
+            
+        case 'sub':
+            return num1 - num2;
+        
+        case 'mult':
+            return num1 * num2;
+            
+        case 'div':
+            return num1/num2;
+        
+        default:
+            return undefined;
+    }
 }
 
 function repeatString(inputString, numRepetitions) {
-
+    if (typeof(inputString) !== 'string') {
+        return undefined;
+    } 
+    else if (numRepetitions <= 0) {
+        return '';
+    }
+    else {
+        var v = '';
+        for (var i = 0; i < numRepetitions; i++) {
+            v += inputString;
+        }
+        return v;
+    }
 }
+
 
 function reverseString(inputString) {
 

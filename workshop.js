@@ -171,8 +171,20 @@ function uniqueElements(array1, array2) {
 }
 
 function isPalindrome(inputString) {
-
+    
+    var erase = /[\W_]/g;
+    var str = inputString.toLowerCase().replace(erase, '');
+    var reverseStr = str.split('').reverse().join('');
+    
+    return str === reverseStr;
+    
+    
 }
+
+console.log(isPalindrome('RADAR'));
+console.log(isPalindrome('JAVASCRIPT'));
+console.log(isPalindrome('ABLE WAS I ERE I SAW ELBA'));
+console.log(isPalindrome("MADAM I'M ADAM"));
 
 function wrapCharacter(inputString) {
 

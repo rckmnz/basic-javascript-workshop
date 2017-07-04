@@ -73,7 +73,6 @@ function repeatString(inputString, numRepetitions) {
     }
 }
 
-
 function reverseString(inputString) {
     var str = '';
     for (var i = inputString.length -1; i >= 0; i--){
@@ -83,15 +82,49 @@ function reverseString(inputString) {
 }
 
 function longestWord(inputString) {
-
+    if(inputString === ''){
+        return '';
+    }
+    else if (typeof(inputString) === 'string') {
+        var array = inputString.split(' ');
+        var longest = 0;
+        
+        for (var i = 0; i < array.length; i++){
+            if (array[i].length > longest){
+                longest = array[i];
+            }
+        }
+    }
+    return array[longest -1];
 }
 
 function capitalize(inputString) {
+    if(inputString === ''){
+        return '';
+    }
+    else if (typeof(inputString) === 'string') {
+          inputString = inputString.toLowerCase().split(' ');
 
+  for(var i = 0; i < inputString.length; i++){
+    inputString[i] = inputString[i].split('');
+    inputString[i][0] = inputString[i][0].toUpperCase(); 
+    inputString[i] = inputString[i].join('');
+        }
+  return inputString.join(' ');
+    }
 }
+//capitalize('hello');
 
 function sumOfNumbers(arrayOfNumbers) {
-
+    var sum = arrayOfNumbers[i];
+    for ( var i = 0; i < arrayOfNumbers.length; i++){
+        if (arrayOfNumbers === []){
+            return 0;
+        }
+        else if (typeof(arrayOfNumbers[i] = 'number')){
+            sum += sum;
+        }
+    }
 }
 
 function uniqueElements(array1, array2) {

@@ -113,22 +113,61 @@ function capitalize(inputString) {
   return inputString.join(' ');
     }
 }
-//capitalize('hello');
 
 function sumOfNumbers(arrayOfNumbers) {
-    var sum = arrayOfNumbers[i];
-    for ( var i = 0; i < arrayOfNumbers.length; i++){
-        if (arrayOfNumbers === []){
-            return 0;
+    var sum = 0;
+    if (arrayOfNumbers === undefined){
+        return undefined;
+    }
+        else {
+        for ( var i = 0; i < arrayOfNumbers.length; i++){
+            if (arrayOfNumbers === []){
+                return 0;
+            }
+            else if (typeof(arrayOfNumbers[i]) === 'number'){
+            sum += arrayOfNumbers[i];
+            }
+            else if (typeof arrayOfNumbers[i] !== 'number'){
+                return undefined;
         }
-        else if (typeof(arrayOfNumbers[i] = 'number')){
-            sum += sum;
-        }
+    }
+    return sum;
     }
 }
 
-function uniqueElements(array1, array2) {
 
+function uniqueElements(array1, array2) {
+    var result = [];
+    var match;
+
+    if (Array.isArray(array1) && Array.isArray(array2)){
+        for (var i = 0; i < array1.length; i++){
+            match = false;
+            for (var j = 0; j < array2.length; j++){
+            if (array1[i] === array2[j]) {
+                match = true;
+                }
+            }
+            if (!match){
+                result.push(array1[i]);
+            }
+        }
+        for (var s = 0; s < array2.length; s++){
+            match = false;
+            for (var t = 0; t < array1.length; t++){
+            if (array2[s] === array1[t]) {
+                match = true;
+                }
+            }
+            if (!match){
+                result.push(array2[s]);
+            }
+        }
+        return result;
+    }
+    else {
+        return undefined;
+    }
 }
 
 function isPalindrome(inputString) {
